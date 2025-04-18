@@ -17,7 +17,6 @@ export default function Footer() {
             return;
         }
 
-        // You can replace this with an API call
         toast.success('Subscribed successfully!');
         setEmail('');
     };
@@ -28,7 +27,6 @@ export default function Footer() {
 
             <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                {/* Logo and About Text */}
                 <div className="space-y-3 text-center md:text-left">
                     <Link href="/" className="text-xl font-bold flex justify-center md:justify-start items-center space-x-2">
                         <Image
@@ -43,7 +41,6 @@ export default function Footer() {
                     </p>
                 </div>
 
-                {/* Social Links + About Us + Subscribe */}
                 <div className="flex flex-col items-center space-y-4">
                     <div className="flex space-x-4">
                         <Link href="https://github.com/yourusername" target="_blank" rel="noopener" className="hover:opacity-75">
@@ -85,7 +82,6 @@ export default function Footer() {
                     </p>
                 </div>
 
-                {/* Navigation */}
                 <div className="space-y-3 text-center md:text-right">
                     <nav className="flex flex-col space-y-2">
                         <Link href="/" className="hover:underline">Home</Link>
