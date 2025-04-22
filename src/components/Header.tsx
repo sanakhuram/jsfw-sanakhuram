@@ -17,7 +17,7 @@ export default function Header() {
                         src="/images/logo.png"
                         alt="Vibe Cart Logo"
                         width={40}
-                        height={35}
+                        height={40}
                     />
                     <span>Vibe Cart</span>
                 </Link>

@@ -33,7 +33,7 @@ export default function Footer() {
                             src="/images/logo.png"
                             alt="Vibe Cart Logo"
                             width={80}
-                            height={35}
+                            height={80}
                         />
                     </Link>
                     <p className="text-sm text-orange-200">
