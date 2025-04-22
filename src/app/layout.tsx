@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="flex flex-col min-h-screen font-sans">
         <CartProvider>
         <Header />
-        <Toaster position="top-right" />
+        <Toaster position="top-center"/>
         <main className="flex-grow">{children}</main>
         <Footer />
         </CartProvider>

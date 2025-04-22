@@ -21,7 +21,7 @@ export default function CartPage() {
                     <ul className="space-y-6">
                         {cart.map(item => (
                             <li key={item.id}
-                            className="flex items-center bg-white p-4 rounded-lg shadow-inner ">
+                                className="flex items-center bg-white p-4 rounded-lg shadow-inner">
                                 <div className="relative w-20 h-20 rounded-md overflow-hidden mr-4">
                                     <Image
                                         src={item.image.url}
@@ -35,22 +35,22 @@ export default function CartPage() {
                                 <div className="flex-1">
                                     <h2 className="text-xl font-semibold">{item.title}</h2>
                                     <div className="mt-2 flex items-center space-x-2">
-                                    <label className="text-sm">Qty:</label>
-                                    <input
-                                        type="number"
-                                        min="1"
-                                        value={item.quantity}
-                                        onChange={e => updateQuantity(item.id, Number(e.target.value))}
-                                        className="w-16 p-1 border border-orange-900 rounded"
-                                    />
-                                </div>
+                                        <label className="text-sm">Qty:</label>
+                                        <input
+                                            type="number"
+                                            min="1"
+                                            value={item.quantity}
+                                            onChange={e => updateQuantity(item.id, Number(e.target.value))}
+                                            className="w-16 p-1 border border-orange-900 rounded"
+                                        />
+                                    </div>
                                     <p className="mt-2">
                                         Price: ${(item.discountedPrice * item.quantity).toFixed(2)}</p>
                                 </div>
 
                                 <button onClick={() => removeFromCart(item.id)}
                                     className="ml-4 text-red-800"
-                                    >
+                                >
                                     Remove
                                 </button>
                             </li>
@@ -62,16 +62,17 @@ export default function CartPage() {
                     <div className="mt-8 text-center">
                         <p className="text-3xl font-semibold">Total: ${total.toFixed(2)}</p>
                         <div className="mt-6 flex justify-center gap-6">
-                        <button onClick={clearCart}
-                        className="bg-red-400 text-orange-200 px-6 py-2 rounded-lg font-bold hover:bg-red-700"
-                        >
-                            Clear Cart
-                        </button>
-                        <button onClick={handleCheckout}
-                        className="bg-red-900 text-orange-200 px-6 py-2 rounded-lg font-bold hover:bg-red-400 "
-                        >Checkout
-                        </button>
-                    </div>
+                            <button onClick={clearCart}
+                                className="bg-red-400 text-orange-200 px-6 py-2 rounded-lg font-bold hover:bg-red-700"
+                            >
+                                Clear Cart
+                            </button>
+                            <button onClick={handleCheckout}
+                                className="bg-red-900 text-orange-200 px-6 py-2 rounded-lg font-bold hover:bg-red-400"
+                            >
+                                Checkout
+                            </button>
+                        </div>
                     </div>
                 )}
             </div>

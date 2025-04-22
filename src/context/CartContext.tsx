@@ -9,10 +9,12 @@ import {
     ReactNode,
 } from 'react';
 import { Product } from '@/types/product';
+import toast from 'react-hot-toast';
 
 interface CartItem extends Product {
     quantity: number;
 }
+
 interface CartContextType {
     cart: CartItem[];
     addToCart: (product: Product) => void;
@@ -36,8 +38,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         const storedCart = localStorage.getItem('cart');
         if (storedCart) {
             try {
-                const parsedCart = JSON.parse(storedCart);
-                setCart(parsedCart);
+                setCart(JSON.parse(storedCart));
             } catch (err) {
                 console.error('Failed to parse cart from storage', err);
             }
@@ -50,33 +51,55 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
     const addToCart = useCallback((product: Product) => {
         setCart((prev) => {
-            const existing = prev.find((item) => item.id === product.id);
-            if (existing) {
-                return prev.map((item) =>
+            const exists = prev.some((item) => item.id === product.id);
+            const updatedCart = exists
+                ? prev.map((item) =>
                     item.id === product.id
                         ? { ...item, quantity: item.quantity + 1 }
                         : item
+                )
+                : [...prev, { ...product, quantity: 1 }];
+
+            setTimeout(() => {
+                toast.success(
+                    exists
+                        ? `${product.title} quantity increased`
+                        : `${product.title} added to cart`
                 );
-            }
-            return [...prev, { ...product, quantity: 1 }];
+            }, 0);
+
+            return updatedCart;
         });
     }, []);
 
     const removeFromCart = useCallback((id: string) => {
-        setCart((prev) => prev.filter((item) => item.id !== id));
+        setCart((prev) => {
+            const item = prev.find((item) => item.id === id);
+            if (item) {
+                toast.success(`${item.title} removed from cart`);
+            }
+            return prev.filter((item) => item.id !== id);
+        });
     }, []);
 
     const clearCart = useCallback(() => {
         setCart([]);
+        toast.success('Cart cleared');
     }, []);
 
     const updateQuantity = useCallback((id: string, quantity: number) => {
         if (quantity < 1) return;
-        setCart((prev) =>
-            prev.map((item) =>
+
+        setCart((prev) => {
+            const updated = prev.map((item) =>
                 item.id === id ? { ...item, quantity } : item
-            )
-        );
+            );
+            const item = prev.find((item) => item.id === id);
+            if (item) {
+                toast.success(`${item.title} quantity updated to ${quantity}`);
+            }
+            return updated;
+        });
     }, []);
 
     return (
