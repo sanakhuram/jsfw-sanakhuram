@@ -9,6 +9,7 @@ export default function HeroIntro({ isDark }: { isDark: boolean }) {
                 width={192}
                 height={192}
                 className="w-48 h-48"
+                unoptimized 
             />
             <h1 className="text-2xl md:text-3xl font-semibold">
                 Your ultimate shopping experience is about to begin...
