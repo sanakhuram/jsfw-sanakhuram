@@ -43,13 +43,13 @@ export default function Footer() {
 
                 <div className="flex flex-col items-center space-y-4">
                     <div className="flex space-x-4">
-                        <Link href="https://github.com/yourusername" target="_blank" rel="noopener" className="hover:opacity-75">
+                        <Link href="https://github.com/sanakhuram" target="_blank" rel="noopener" className="hover:opacity-75">
                             <FaGithub size={20} />
                         </Link>
-                        <Link href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" className="hover:opacity-75">
+                        <Link href="https://www.linkedin.com/in/sana-khuram-157ba02b7/" target="_blank" rel="noopener" className="hover:opacity-75">
                             <FaLinkedin size={20} />
                         </Link>
-                        <Link href="https://instagram.com/yourusername" target="_blank" rel="noopener" className="hover:opacity-75">
+                        <Link href="https://www.instagram.com/sana_khuram/?igsh=MTBneHhvd2d2eXB2dg%3D%3D#" target="_blank" rel="noopener" className="hover:opacity-75">
                             <FaInstagram size={20} />
                         </Link>
                     </div>
