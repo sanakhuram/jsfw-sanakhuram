@@ -60,13 +60,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
                 )
                 : [...prev, { ...product, quantity: 1 }];
 
-            setTimeout(() => {
-                toast.success(
-                    exists
-                        ? `${product.title} quantity increased`
-                        : `${product.title} added to cart`
-                );
-            }, 0);
 
             return updatedCart;
         });

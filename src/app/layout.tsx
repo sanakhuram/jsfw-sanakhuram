@@ -8,6 +8,12 @@ import { Toaster } from 'react-hot-toast';
 import { Kodchasan } from 'next/font/google';
 import { CartProvider } from '@/context/CartContext';
 
+export const metadata = {
+  icons: {
+    icon: '/favicon.ico',
+  },
+};
+
 const kodchasan = Kodchasan({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
@@ -19,10 +25,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" className={kodchasan.variable}>
       <body className="flex flex-col min-h-screen font-sans">
         <CartProvider>
-        <Header />
-        <Toaster position="top-center"/>
-        <main className="flex-grow">{children}</main>
-        <Footer />
+          <Header />
+          <Toaster position="top-center" />
+          <main className="flex-grow">{children}</main>
+          <Footer />
         </CartProvider>
       </body>
     </html>
