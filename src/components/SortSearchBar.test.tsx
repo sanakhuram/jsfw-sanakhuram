@@ -11,7 +11,7 @@ test('renders and updates search input', () => {
       search=""
       onSearchChange={onSearchChange}
       sortBy="price"
-      sortDir="asc"
+      sortDir="desc"
       setSortBy={setSortBy}
       setSortDir={setSortDir}
     />
