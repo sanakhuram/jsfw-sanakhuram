@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx", // ✅ Properly transpile JSX for Jest
+    "module": "commonjs", // ✅ Makes Jest happy
+    "noEmit": true
+  },
+  "include": ["**/*.ts", "**/*.tsx", "jest.setup.ts"]
+}

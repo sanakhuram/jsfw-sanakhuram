@@ -29,8 +29,8 @@ export default function HomePage() {
 
   useEffect(() => {
     fetch('https://v2.api.noroff.dev/online-shop')
-      .then(res => res.json())
-      .then(data => setProducts(data.data))
+      .then((res) => res.json())
+      .then((data) => setProducts(data.data))
       .catch(console.error);
   }, []);
 
@@ -47,7 +47,7 @@ export default function HomePage() {
     perPage,
   });
 
-  const discountedCount = products.filter(p => p.discountedPrice < p.price).length;
+  const discountedCount = products.filter((p) => p.discountedPrice < p.price).length;
 
   return (
     <main className="max-w-6xl mx-auto px-4 py-8 space-y-8">
