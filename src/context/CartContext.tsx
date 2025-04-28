@@ -72,16 +72,20 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const updateQuantity = useCallback((id: string, quantity: number) => {
     if (quantity < 1) return;
-
+  
     setCart((prev) => {
       const updated = prev.map((item) => (item.id === id ? { ...item, quantity } : item));
       const item = prev.find((item) => item.id === id);
+  
       if (item) {
-        toast.success(`${item.title} quantity updated to ${quantity}`);
+        setTimeout(() => {
+          toast.success(`${item.title} quantity updated to ${quantity}`);
+        }, 0); 
       }
       return updated;
     });
   }, []);
+  
 
   return (
     <CartContext.Provider

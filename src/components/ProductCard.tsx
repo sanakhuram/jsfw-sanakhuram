@@ -38,6 +38,7 @@ export default function ProductCard({
           className="object-cover transition-transform duration-200 hover:scale-105"
           sizes="(max-width: 768px) 100vw, 33vw"
           priority
+          loading="eager"
         />
       </Link>
 

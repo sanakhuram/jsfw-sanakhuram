@@ -11,6 +11,7 @@ export default function HeroIntro({ isDark }: { isDark: boolean }) {
         className="w-48 h-48"
         unoptimized
         priority
+        loading="eager"
       />
       <h1 className="text-2xl md:text-3xl font-semibold">
         Your ultimate shopping experience is about to begin...

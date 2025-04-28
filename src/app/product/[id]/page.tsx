@@ -4,11 +4,11 @@ import AddToCartButton from '@/components/AddToCartButton';
 import { Product } from '@/types/product';
 
 async function getProduct(id: string): Promise<Product> {
-  const res = await fetch(`https://v2.api.noroff.dev/online-shop/${id}`, {
+  const response = await fetch(`https://v2.api.noroff.dev/online-shop/${id}`, {
     cache: 'no-store',
   });
-  if (!res.ok) throw new Error('Failed to fetch product');
-  const { data } = await res.json();
+  if (!response.ok) throw new Error('Failed to fetch product');
+  const { data } = await response.json();
   return data;
 }
 
@@ -79,12 +79,12 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
         <h2 className="text-2xl font-semibold mb-4">Reviews</h2>
         {product.reviews.length > 0 ? (
           <div className="space-y-4">
-            {product.reviews.map((rev) => (
-              <div key={rev.id} className="border-l-4 border-primary pl-4">
+            {product.reviews.map((review) => (
+              <div key={review.id} className="border-l-4 border-primary pl-4">
                 <p className="font-medium">
-                  {rev.username} — <span className="text-yellow-500">{rev.rating}⭐</span>
+                  {review.username} — <span className="text-yellow-500">{review.rating}⭐</span>
                 </p>
-                <p className="mt-1">{rev.description}</p>
+                <p className="mt-1">{review.description}</p>
               </div>
             ))}
           </div>
