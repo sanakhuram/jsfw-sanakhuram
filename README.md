@@ -85,9 +85,7 @@ cd vibe-cart
 npm install
 npm run dev
 ```
-
-
-### ✅ Final Sections Added:
+---
 
 #### 📡 **API**
 
