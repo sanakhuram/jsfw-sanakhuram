@@ -134,3 +134,28 @@ Made with ❤️ by **Sanakhuram**
 
 ---
 
+Absolutely! Here's your updated **📚 Resources** section, now with some extra 🔥 goodies and emojis to spice things up:
+
+---
+
+## 📚 Resources
+
+### 🔧 Courses & Learning
+
+* 🎥 [YouTube: React + Tailwind + TypeScript + Next.js](https://www.youtube.com/results?search_query=react+tailwind+typescript+next.js+)
+* 🧠 [LinkedIn Learning: React Essential Training](https://www.linkedin.com/learning/react-essential-training/building-modern-user-interfaces-with-react?u=43268076)
+* 📘 [LinkedIn Learning: Learning TypeScript](https://www.linkedin.com/learning/learning-typescript-2/welcome-to-learning-typescript?u=43268076)
+* 💡 [FreeCodeCamp – Full React Course 2024](https://www.youtube.com/watch?v=bMknfKXIFA8) (with Hooks, Context, Router)
+* 🏁 [Traversy Media: Next.js Crash Course](https://www.youtube.com/watch?v=mTz0GXj8NN0) (great for getting your project bootstrapped!)
+* 🚀 [JavaScript Mastery – Build & Deploy Modern Next.js Apps](https://www.youtube.com/watch?v=0fYi8SGA20k) (Next.js + Tailwind + Sanity combo magic)
+
+### 🧰 Docs & Official Stuff
+
+* 📚 [React Docs](https://react.dev/) – Learn how modern React works with hooks and components
+* 📘 [TypeScript Docs](https://www.typescriptlang.org/docs/) – Type-check yourself before you wreck yourself
+* 🌐 [Next.js Docs](https://nextjs.org/docs) – App router, SSR, ISR... all the tasty acronyms
+* 🎨 [TailwindCSS Docs](https://tailwindcss.com/docs) – Utility-first design heaven
+* 🔍 [React Testing Library Docs](https://testing-library.com/docs/react-testing-library/intro/) – Because tests are friends, not chores
+* 🌟 [Framer Motion Docs](https://www.framer.com/motion/) – Add that Pixar-level polish to your UI
+
+
