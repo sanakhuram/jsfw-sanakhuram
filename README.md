@@ -16,7 +16,12 @@
 
 ---
 
-[vibe-cart](https://github.com/user-attachments/assets/35253c6b-9709-45a3-b00e-a7b6441c9f38)
+
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/35253c6b-9709-45a3-b00e-a7b6441c9f38" alt="Vibe Cart Screenshot" />
+</div>
+
 
 ---
 ## 🧰 Built With
