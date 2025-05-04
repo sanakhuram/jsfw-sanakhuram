@@ -1,11 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import Header from './Header';
 import { CartProvider } from '@/context/CartContext';
+import { FavouritesProvider } from '@/context/FavouritesContext';
 
 test('renders header with logo and cart', () => {
   render(
     <CartProvider>
-      <Header />
+      <FavouritesProvider>
+        <Header />
+      </FavouritesProvider>
     </CartProvider>
   );
 
