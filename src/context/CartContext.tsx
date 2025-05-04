@@ -1,6 +1,13 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useCallback,
+  ReactNode,
+} from 'react';
 import { Product } from '@/types/product';
 import toast from 'react-hot-toast';
 
@@ -26,33 +33,40 @@ export function useCart() {
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cart, setCart] = useState<CartItem[]>([]);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const storedCart = localStorage.getItem('cart');
-    if (storedCart) {
-      try {
+    try {
+      const storedCart = localStorage.getItem('cart');
+      if (storedCart) {
         setCart(JSON.parse(storedCart));
-      } catch (err) {
-        console.error('Failed to parse cart from storage', err);
       }
+    } catch (err) {
+      console.error('Failed to parse cart from storage', err);
     }
+    setMounted(true);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }, [cart]);
+    if (mounted) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+  }, [cart, mounted]);
 
   const addToCart = useCallback((product: Product) => {
     setCart((prev) => {
       const exists = prev.some((item) => item.id === product.id);
       const updatedCart = exists
         ? prev.map((item) =>
-            item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+            item.id === product.id
+              ? { ...item, quantity: item.quantity + 1 }
+              : item
           )
         : [...prev, { ...product, quantity: 1 }];
 
       return updatedCart;
     });
+    toast.success(`${product.title} added to cart`);
   }, []);
 
   const removeFromCart = useCallback((id: string) => {
@@ -72,11 +86,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const updateQuantity = useCallback((id: string, quantity: number) => {
     if (quantity < 1) return;
-  
+
     setCart((prev) => {
-      const updated = prev.map((item) => (item.id === id ? { ...item, quantity } : item));
+      const updated = prev.map((item) =>
+        item.id === id ? { ...item, quantity } : item
+      );
       const item = prev.find((item) => item.id === id);
-  
+
       if (item) {
         setTimeout(() => {
           toast.success(`${item.title} quantity updated to ${quantity}`);
@@ -85,7 +101,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
       return updated;
     });
   }, []);
-  
 
   return (
     <CartContext.Provider

@@ -20,7 +20,6 @@ export default function ContactPage() {
   } = useForm<ContactFormInputs>();
 
   const onsubmit = () => {
-    // console.log('Form payload:', data);
     toast.success('Message Sent!');
     reset();
   };
