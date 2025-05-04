@@ -86,17 +86,6 @@ npm install
 npm run dev
 ```
 
----
-
-## 📸 Preview
-
-![Vibe Cart Preview](https://your-project-screenshot-url.png)
-
----
-
-Great! Here’s a recap of what’s now included in your polished `README.md`:
-
----
 
 ### ✅ Final Sections Added:
 
