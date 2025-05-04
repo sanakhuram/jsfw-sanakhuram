@@ -1,4 +1,3 @@
-
 <div align="center">
   <h1>
     <img 
@@ -7,7 +6,7 @@
       width="40" 
       style="border-radius: 50%; vertical-align: middle; margin-right: 8px;" 
     />
-    Vibe Cart
+    Vibe Cart 🛒
   </h1>
   <p>Modern, fast, and fully functional e-commerce UI built with Next.js, React, and TypeScript.</p>
   <a href="https://jsfw-sanakhuram.vercel.app/" target="_blank">
@@ -37,39 +36,39 @@
 ### 🛒 E-Commerce Functionality
 - Add to cart 🛍️
 - Add to favourites ❤️
-- Remove, increase, decrease quantity
-- View detailed product info
-- Reviews, star ratings, description, discount badge
+- Remove, increase, decrease quantity ➕➖
+- View detailed product info 🔍
+- Reviews, star ratings ⭐, descriptions, discount badges 🏷️
 
 ### 🧭 Navigation & UI
-- Animated hero intro (3s)
-- Sticky header with cart + favourites
-- Footer and full responsive layout
-- Product sorting (alphabetical / price)
-- Search bar with real-time filtering
-- Pagination
+- Animated hero intro (3s) 🎬
+- Sticky header with cart & favourites 📌
+- Responsive layout & footer 📱💻
+- Product sorting (A-Z / price) 🔤💲
+- Real-time search bar 🔎
+- Pagination 📄➡️
 
 ### ⚙️ Developer Setup
-- Routing with Next.js App Router
-- Context API for cart and favourites
-- Toast notifications via `react-hot-toast`
-- Animations via `Framer Motion`
-- Clean code with ESLint + Prettier
-- Unit tested with Jest + React Testing Library
+- Routing with Next.js App Router 🧭
+- Context API for cart and favourites 🧠
+- Toast notifications with `react-hot-toast` 🔔
+- Animations via `Framer Motion` 🎞️
+- Clean code with ESLint + Prettier 🧼
+- Unit tested with Jest + React Testing Library 🧪
 
 ---
 
 ## 🧪 Testing
 
-🧾 **Jest + React Testing Library** tests cover key components like:
+Jest + React Testing Library cover key components:
 
-- `ProductCard`
-- `Header`
-- `AddToCartButton`
-- `SortSearchBar`
-- `Footer`
+- 🧱 `ProductCard`
+- 🧭 `Header`
+- ➕ `AddToCartButton`
+- 🔄 `SortSearchBar`
+- 🦶 `Footer`
 
-Run all tests:
+Run tests locally:
 
 ```bash
 npm run test
@@ -79,29 +78,52 @@ npm run test
 
 ## 🚀 Getting Started
 
+Clone the project and get rolling:
+
 ```bash
 git clone https://github.com/your-username/vibe-cart.git
 cd vibe-cart
 npm install
 npm run dev
 ```
+
 ---
 
-#### 📡 **API**
+## 📡 API
 
-* Clear explanation of the [Noroff Online Shop API](https://docs.noroff.dev/docs/v2/basic/online-shop)
-* `GET /online-shop` for all products
-* `GET /online-shop/{id}` for individual product details
+Vibe Cart uses the **[Noroff Online Shop API](https://docs.noroff.dev/docs/v2/basic/online-shop)**:
 
-#### 👤 **Developer**
+* `GET /online-shop` – fetch all products
+* `GET /online-shop/{id}` – fetch individual product
 
-* Made with ❤️ by Sanakhuram
-* Clickable badge buttons for:
+---
 
-  * [GitHub](https://github.com/sanakhuram)
-  * [LinkedIn](https://www.linkedin.com/in/sana-khuram-157ba02b7/)
-  * [Email](mailto:sana.khuram.baig@gmail.com)
+## ✅ Assignment Checklist
 
+* [x] Fetch all products
+* [x] Show single product details
+* [x] Full cart functionality
+* [x] Wishlist (favourites)
+* [x] Search & sorting
+* [x] Responsive Tailwind layout
+* [x] Contact form with validation
+* [x] Toast notifications for actions
+* [x] TypeScript all the way
+* [x] Component tests (Jest + RTL)
+* [x] Neat project structure
+* [x] Live on Vercel 🚀
+* [x] This ✨ README ✨
 
+---
 
+## 👤 Developer
 
+Made with ❤️ by **Sanakhuram**
+
+* 🐙 [GitHub](https://github.com/sanakhuram)
+* 💼 [LinkedIn](https://www.linkedin.com/in/sana-khuram-157ba02b7/)
+* 📧 [Email](mailto:sana.khuram.baig@gmail.com)
+
+---
+est coverage/tech stack! Want to turn this into a portfolio markdown page too?
+```
