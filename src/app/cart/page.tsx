@@ -13,7 +13,7 @@ export default function CartPage() {
 
   return (
     <main className="flex items-center justify-center">
-      <div className="w-full max-w-xl bg-gray-100 rounded-lg shadow-lg p-6">
+      <div className="w-full max-w-xl bg-gray-100 rounded-lg shadow-lg p-6 mb-8">
         <h1 className="text-4xl font-bold mb-6 text-center">Your Cart</h1>
         {cart.length === 0 ? (
           <p className="text-center text-red-900">Your Cart is empty</p>
@@ -62,13 +62,13 @@ export default function CartPage() {
             <div className="mt-6 flex justify-center gap-6">
               <button
                 onClick={clearCart}
-                className="bg-red-400 text-orange-200 px-6 py-2 rounded-lg font-bold hover:bg-red-700"
+                className="bg-red-400 text-red-900 px-6 py-2 rounded-lg font-bold hover:bg-red-700 hover:text-orange-200"
               >
                 Clear Cart
               </button>
               <button
                 onClick={handleCheckout}
-                className="bg-red-900 text-orange-200 px-6 py-2 rounded-lg font-bold hover:bg-red-400"
+                className="bg-red-900 text-orange-200 px-6 py-2 rounded-lg font-bold hover:bg-red-700 "
               >
                 Checkout
               </button>
