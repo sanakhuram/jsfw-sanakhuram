@@ -1,5 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import ProductCard from './ProductCard';
+import { CartProvider } from '@/context/CartContext';
+import { FavouritesProvider } from '@/context/FavouritesContext';
 
 const product = {
   id: '1',
@@ -14,7 +16,14 @@ const product = {
 };
 
 test('renders product details and discount badge', () => {
-  render(<ProductCard {...product} />);
+  render(
+    <CartProvider>
+      <FavouritesProvider>
+        <ProductCard {...product} />
+      </FavouritesProvider>
+    </CartProvider>
+  );
+
   expect(screen.getByText(/test product/i)).toBeInTheDocument();
   expect(screen.getByText(/\$200\.00/)).toBeInTheDocument();
   expect(screen.getByText(/\$80\.00/)).toBeInTheDocument();

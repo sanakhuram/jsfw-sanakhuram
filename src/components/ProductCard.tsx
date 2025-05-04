@@ -32,8 +32,7 @@ export default function ProductCard(product: Product) {
   const renderStars = (count: number) => '⭐'.repeat(Math.round(count));
 
   return (
-    <div className="bg-gray-200 rounded-xl shadow p-4 relative group">
-      {/* Discount badge */}
+    <div className="bg-gray-200 rounded-xl shadow p-4 relative group flex flex-col h-full">
       {discountedPrice < price && (
         <div className="absolute top-3 right-3 bg-red-700 text-white text-xs font-bold uppercase px-2 py-1 rounded-md z-40">
           {discountPercent}% off
@@ -55,26 +54,27 @@ export default function ProductCard(product: Product) {
         />
       </Link>
 
-      <h2 className="text-lg font-semibold mb-1">{title}</h2>
-      <p className="text-sm text-gray-700 mb-2 line-clamp-3">{description}</p>
+      <div className="flex-grow">
+        <h2 className="text-lg font-semibold mb-1">{title}</h2>
+        <p className="text-sm text-gray-700 mb-2 line-clamp-3">{description}</p>
 
-      <p className="text-yellow-600 mb-2 text-sm">
-        {renderStars(rating)} ({rating})
-      </p>
+        <p className="text-yellow-600 mb-2 text-sm">
+          {renderStars(rating)} ({rating})
+        </p>
 
-      <p className="mb-2">
-        {discountedPrice < price ? (
-          <>
-            <span className="line-through text-gray-800 mr-2">${price.toFixed(2)}</span>
-            <span className="text-green-600 font-bold">${discountedPrice.toFixed(2)}</span>
-          </>
-        ) : (
-          <span className="font-bold">${price.toFixed(2)}</span>
-        )}
-      </p>
+        <p className="mb-2">
+          {discountedPrice < price ? (
+            <>
+              <span className="line-through text-gray-800 mr-2">${price.toFixed(2)}</span>
+              <span className="text-green-600 font-bold">${discountedPrice.toFixed(2)}</span>
+            </>
+          ) : (
+            <span className="font-bold">${price.toFixed(2)}</span>
+          )}
+        </p>
+      </div>
 
       <div className="flex gap-4 mt-3 items-center">
-
         <Link
           href={`/product/${id}`}
           className="p-2 rounded-full bg-red-900 shadow hover:bg-red-700 hover:scale-110 transition-transform"
