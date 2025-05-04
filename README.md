@@ -2,12 +2,12 @@
 <div align="center">
   <h1>
     <img 
-      src="./public/loading-shop.gif" 
+      src="./public/images/logo.png" 
       alt="Vibe Cart Logo" 
-      width="40" 
+      width="80" 
       style="border-radius: 50%; vertical-align: middle; margin-right: 8px;" 
     />
-    🛍️ Vibe Cart
+    Vibe Cart
   </h1>
   <p>Modern, fast, and fully functional e-commerce UI built with Next.js, React, and TypeScript.</p>
   <a href="https://jsfw-sanakhuram.vercel.app/" target="_blank">
