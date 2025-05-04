@@ -16,15 +16,15 @@
 
 ---
 
+## 📸 Screenshots
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3a43cf58-ebce-4edc-a1c6-a0992df13770" width="500"/>
+</p>
 
-<div align="center">
-![Screenshot_5-5-2025_01755_uxfol io](https://github.com/user-attachments/assets/3a43cf58-ebce-4edc-a1c6-a0992df13770)
-  -
-![Screenshot_5-5-2025_01338_uxfol io](https://github.com/user-attachments/assets/89faccc9-0135-4c0d-8010-b294d85cf562)
-
-</div>
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/89faccc9-0135-4c0d-8010-b294d85cf562" width="500"/>
+</p>
 
 ---
 ## 🧰 Built With
