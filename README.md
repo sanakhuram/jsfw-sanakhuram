@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img src="./loading-shop.gif" alt="Vibe Cart Logo" width="120" />
+  <img src="./public/loading-shop.gif" alt="Vibe Cart Logo" width="120" />
   <h1>🛍️ Vibe Cart</h1>
   <p>Modern, fast, and fully functional e-commerce UI built with Next.js, React, and TypeScript.</p>
   <a href="https://jsfw-sanakhuram.vercel.app/" target="_blank">
@@ -87,25 +87,27 @@ npm run dev
 
 ---
 
-## 🧠 What's Next?
-
-* 🌓 Dark mode support
-* 🛒 Full checkout/payment integration
-* 🔐 User auth (login, orders, wishlist)
-* 🔎 SEO optimization & sitemap
+Great! Here’s a recap of what’s now included in your polished `README.md`:
 
 ---
 
-## 🙌 Author
+### ✅ Final Sections Added:
 
-Built by [Sanakhuram](https://sanakhuram.netlify.app/) with care and coffee ☕
-API from [Noroff E-Commerce API](https://v2.api.noroff.dev/)
+#### 📡 **API**
 
----
+* Clear explanation of the [Noroff Online Shop API](https://docs.noroff.dev/docs/v2/basic/online-shop)
+* `GET /online-shop` for all products
+* `GET /online-shop/{id}` for individual product details
 
-## 📄 License
+#### 👤 **Developer**
 
-MIT License © 2025 Sanakhuram
+* Your name with a personal touch (“Made with ❤️ by Sanakhuram”)
+* Clickable badge buttons for:
 
-```
+  * [GitHub](https://github.com/sanakhuram)
+  * [LinkedIn](https://www.linkedin.com/in/sana-khuram-157ba02b7/)
+  * [Email](mailto:sana.khuram.baig@gmail.com)
+
+
+
 
