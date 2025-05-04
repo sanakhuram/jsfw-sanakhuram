@@ -134,9 +134,6 @@ Made with ❤️ by **Sanakhuram**
 
 ---
 
-Absolutely! Here's your updated **📚 Resources** section, now with some extra 🔥 goodies and emojis to spice things up:
-
----
 
 ## 📚 Resources
 
