@@ -4,7 +4,7 @@
     <img 
       src="./public/images/logo.png" 
       alt="Vibe Cart Logo" 
-      width="80" 
+      width="40" 
       style="border-radius: 50%; vertical-align: middle; margin-right: 8px;" 
     />
     Vibe Cart
