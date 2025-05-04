@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import { Toaster } from 'react-hot-toast';
 import { Kodchasan } from 'next/font/google';
 import { CartProvider } from '@/context/CartContext';
+import { FavouritesProvider } from '@/context/FavouritesContext';
 
 export const metadata = {
   icons: {
@@ -25,11 +26,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" className={kodchasan.variable}>
       <body className="flex flex-col min-h-screen font-sans">
         <CartProvider>
+        <FavouritesProvider>
           <Header />
           <Toaster position="top-center" />
           <main className="flex-grow">{children}</main>
           <Footer />
-        </CartProvider>
+          </FavouritesProvider>
+        </CartProvider>  
       </body>
     </html>
   );

@@ -3,9 +3,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Product } from '@/types/product';
-import { FaEye, FaShoppingBag } from 'react-icons/fa';
+import { FaEye, FaShoppingBag, FaHeart, FaRegHeart } from 'react-icons/fa';
 import { useCart } from '@/context/CartContext';
 import toast from 'react-hot-toast';
+import { useFavourites } from '@/context/FavouritesContext';
 
 export default function ProductCard(product: Product) {
   const {
@@ -20,6 +21,8 @@ export default function ProductCard(product: Product) {
 
   const discountPercent = Math.round(((price - discountedPrice) / price) * 100);
   const { addToCart } = useCart();
+  const { toggleFavourite, isFavourite } = useFavourites();
+  const fav = isFavourite(id);
 
   const handleAddToCart = () => {
     addToCart(product);
@@ -30,7 +33,7 @@ export default function ProductCard(product: Product) {
 
   return (
     <div className="bg-gray-200 rounded-xl shadow p-4 relative group">
-
+      {/* Discount badge */}
       {discountedPrice < price && (
         <div className="absolute top-3 right-3 bg-red-700 text-white text-xs font-bold uppercase px-2 py-1 rounded-md z-40">
           {discountPercent}% off
@@ -71,6 +74,7 @@ export default function ProductCard(product: Product) {
       </p>
 
       <div className="flex gap-4 mt-3 items-center">
+
         <Link
           href={`/product/${id}`}
           className="p-2 rounded-full bg-red-900 shadow hover:bg-red-700 hover:scale-110 transition-transform"
@@ -85,6 +89,16 @@ export default function ProductCard(product: Product) {
           aria-label="Add to cart"
         >
           <FaShoppingBag className="w-5 h-5" />
+        </button>
+
+        <button
+          onClick={() => toggleFavourite(product)}
+          className={`p-2 rounded-full shadow transition-transform hover:scale-110 ${
+            fav ? 'bg-red-500 text-white' : 'bg-red-900 text-orange-200 hover:bg-red-600'
+          }`}
+          aria-label="Add to favourites"
+        >
+          {fav ? <FaHeart className="w-5 h-5" /> : <FaRegHeart className="w-5 h-5" />}
         </button>
       </div>
     </div>
