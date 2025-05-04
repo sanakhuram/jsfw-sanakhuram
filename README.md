@@ -1,6 +1,6 @@
 
-<div align="center">
-  <img src="./public/loading-shop.gif" alt="Vibe Cart Logo" width="120" />
+<div align="left">
+  <img src="./public/loading-shop.gif" alt="Vibe Cart Logo" width="80" />
   <h1>🛍️ Vibe Cart</h1>
   <p>Modern, fast, and fully functional e-commerce UI built with Next.js, React, and TypeScript.</p>
   <a href="https://jsfw-sanakhuram.vercel.app/" target="_blank">
@@ -101,7 +101,7 @@ Great! Here’s a recap of what’s now included in your polished `README.md`:
 
 #### 👤 **Developer**
 
-* Your name with a personal touch (“Made with ❤️ by Sanakhuram”)
+* Made with ❤️ by Sanakhuram
 * Clickable badge buttons for:
 
   * [GitHub](https://github.com/sanakhuram)
