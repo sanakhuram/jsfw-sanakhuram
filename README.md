@@ -1,7 +1,14 @@
 
 <div align="center">
-  <img src="./public/loading-shop.gif" alt="Vibe Cart Logo" width="80" />
-  <h1>🛍️ Vibe Cart</h1>
+  <h1>
+    <img 
+      src="./public/loading-shop.gif" 
+      alt="Vibe Cart Logo" 
+      width="40" 
+      style="border-radius: 50%; vertical-align: middle; margin-right: 8px;" 
+    />
+    🛍️ Vibe Cart
+  </h1>
   <p>Modern, fast, and fully functional e-commerce UI built with Next.js, React, and TypeScript.</p>
   <a href="https://jsfw-sanakhuram.vercel.app/" target="_blank">
     <img src="https://img.shields.io/badge/View%20Live-Demo-green?style=for-the-badge&logo=vercel" alt="View Live Demo" />
