@@ -125,5 +125,4 @@ Made with ❤️ by **Sanakhuram**
 * 📧 [Email](mailto:sana.khuram.baig@gmail.com)
 
 ---
-est coverage/tech stack! Want to turn this into a portfolio markdown page too?
-```
+
