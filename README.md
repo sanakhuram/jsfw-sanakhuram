@@ -1,5 +1,5 @@
 
-<div align="left">
+<div align="center">
   <img src="./public/loading-shop.gif" alt="Vibe Cart Logo" width="80" />
   <h1>🛍️ Vibe Cart</h1>
   <p>Modern, fast, and fully functional e-commerce UI built with Next.js, React, and TypeScript.</p>
