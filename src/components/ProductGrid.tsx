@@ -11,14 +11,13 @@ interface Props {
 export default function ProductGrid({ products, totalPages, currentPage, setPage }: Props) {
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {products.length > 0 ? (
-          products.map((product) => <ProductCard key={product.id} {...product} />)
-        ) : (
-          <p className="text-center text-neutral-500 col-span-full">No products found.</p>
-        )}
-      </div>
-
+<div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
+  {products.length > 0 ? (
+    products.map((product) => <ProductCard key={product.id} {...product} />)
+  ) : (
+    <p className="text-center text-neutral-500 col-span-full">No products found.</p>
+  )}
+</div>
       <div className="flex justify-center flex-wrap gap-2 mt-6">
         {Array.from({ length: totalPages }, (_, i) => (
           <button

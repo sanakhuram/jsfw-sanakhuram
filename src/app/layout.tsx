@@ -8,6 +8,7 @@ import { Toaster } from 'react-hot-toast';
 import { Kodchasan } from 'next/font/google';
 import { CartProvider } from '@/context/CartContext';
 import { FavouritesProvider } from '@/context/FavouritesContext';
+import BackToTopButton from '@/components/BackToTopButton';
 
 export const metadata = {
   icons: {
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Toaster position="top-center" />
           <main className="flex-grow">{children}</main>
           <Footer />
+          <BackToTopButton/>
           </FavouritesProvider>
         </CartProvider>  
       </body>

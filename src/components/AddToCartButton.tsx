@@ -2,14 +2,13 @@
 
 import { Product } from '@/types/product';
 import { useCart } from '@/context/CartContext';
-import toast from 'react-hot-toast';
+
 
 export default function AddToCartButton({ product }: { product: Product }) {
   const { addToCart } = useCart();
 
   const handleAddToCart = () => {
-    addToCart(product);
-    toast.success(`${product.title} added to cart`);
+    addToCart(product); 
   };
 
   return (
@@ -21,3 +20,4 @@ export default function AddToCartButton({ product }: { product: Product }) {
     </button>
   );
 }
+

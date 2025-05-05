@@ -1,12 +1,13 @@
 'use client';
 
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import HeroIntro from '@/components/HeroIntro';
 import SortSearchBar from '@/components/SortSearchBar';
 import ProductGrid from '@/components/ProductGrid';
 import { useProductFilter } from './hooks/useProductFilter';
 import { Product } from '@/types/product';
-import { motion } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
+import { getAllProducts } from '@/lib/api';
 
 export default function HomePage() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -28,9 +29,8 @@ export default function HomePage() {
   }, []);
 
   useEffect(() => {
-    fetch('https://v2.api.noroff.dev/online-shop')
-      .then((res) => res.json())
-      .then((data) => setProducts(data.data))
+    getAllProducts()
+      .then(setProducts)
       .catch(console.error);
   }, []);
 
