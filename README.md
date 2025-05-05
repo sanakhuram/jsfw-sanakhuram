@@ -19,8 +19,18 @@
 ## 📸 Screenshots
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/3a43cf58-ebce-4edc-a1c6-a0992df13770" alt="Screenshot 1" width="45%" style="margin-right: 10px; border-radius: 12px;" />
-  <img src="https://github.com/user-attachments/assets/1cbd390a-1094-40a0-8153-660d956ed553)" alt="Screenshot 2" width="45%" style="margin-right: 10px; border-radius: 12px;" />
+  <img 
+    src="https://github.com/user-attachments/assets/3a43cf58-ebce-4edc-a1c6-a0992df13770" 
+    alt="Screenshot 1" 
+    width="45%" 
+    style="margin-right: 10px; border-radius: 12px;" 
+  />
+  <img 
+    src="https://github.com/user-attachments/assets/1cbd390a-1094-40a0-8153-660d956ed553" 
+    alt="Screenshot 2" 
+    width="45%" 
+    style="margin-right: 10px; border-radius: 12px;" 
+  />
 </div>
 
 ---
