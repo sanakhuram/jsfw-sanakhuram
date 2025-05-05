@@ -16,14 +16,15 @@
 
 ---
 
-
+## 📸 Screenshots
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/35253c6b-9709-45a3-b00e-a7b6441c9f38" alt="Vibe Cart Screenshot" />
+  <img src="https://github.com/user-attachments/assets/3a43cf58-ebce-4edc-a1c6-a0992df13770" alt="Screenshot 1" width="45%" style="margin-right: 10px; border-radius: 12px;" />
+  <img src="https://github.com/user-attachments/assets/89faccc9-0135-4c0d-8010-b294d85cf562" alt="Screenshot 2" width="45%" style="border-radius: 12px;" />
 </div>
 
-
 ---
+
 ## 🧰 Built With
 
 <p align="center">
