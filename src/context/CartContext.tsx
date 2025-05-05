@@ -56,51 +56,54 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const addToCart = useCallback((product: Product) => {
     setCart((prev) => {
       const exists = prev.some((item) => item.id === product.id);
-      const updatedCart = exists
+      return exists
         ? prev.map((item) =>
             item.id === product.id
               ? { ...item, quantity: item.quantity + 1 }
               : item
           )
         : [...prev, { ...product, quantity: 1 }];
-
-      return updatedCart;
     });
-    toast.success(`${product.title} added to cart`);
+
+    toast.success(`${product.title} added to cart`, {
+      id: `add-${product.id}`,
+    });
   }, []);
 
   const removeFromCart = useCallback((id: string) => {
-    setCart((prev) => {
-      const item = prev.find((item) => item.id === id);
-      if (item) {
-        toast.success(`${item.title} removed from cart`);
-      }
-      return prev.filter((item) => item.id !== id);
-    });
-  }, []);
+    const item = cart.find((item) => item.id === id);
+
+    setCart((prev) => prev.filter((item) => item.id !== id));
+
+    if (item) {
+      toast.success(`${item.title} removed from cart`, {
+        id: `remove-${id}`,
+      });
+    }
+  }, [cart]);
 
   const clearCart = useCallback(() => {
     setCart([]);
-    toast.success('Cart cleared');
+    toast.success('Cart cleared', { id: 'clear-cart' });
   }, []);
 
   const updateQuantity = useCallback((id: string, quantity: number) => {
     if (quantity < 1) return;
 
-    setCart((prev) => {
-      const updated = prev.map((item) =>
-        item.id === id ? { ...item, quantity } : item
-      );
-      const item = prev.find((item) => item.id === id);
+    const item = cart.find((item) => item.id === id);
 
-      if (item) {
-        setTimeout(() => {
-          toast.success(`${item.title} quantity updated to ${quantity}`);
-        }, 0); 
-      }
-      return updated;
-    });
-  }, []);
+    setCart((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, quantity } : item
+      )
+    );
+
+    if (item) {
+      toast.success(`${item.title} quantity updated to ${quantity}`, {
+        id: `qty-${id}`,
+      });
+    }
+  }, [cart]);
 
   return (
     <CartContext.Provider
