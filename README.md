@@ -124,6 +124,12 @@ Vibe Cart uses the **[Noroff Online Shop API](https://docs.noroff.dev/docs/v2/ba
 
 ---
 
+## Contributing 🤝
+
+For contributions! Fork the repository and create a pull request with your improvements or bug fixes. Ensure that your code follows the project's style guidelines.
+
+---
+
 ## 👤 Developer
 
 Made with ❤️ by **Sanakhuram**
