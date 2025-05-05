@@ -13,14 +13,15 @@ export default function CartPage() {
 
   return (
     <main className="flex items-center justify-center">
-      <div className="w-full max-w-xl bg-gray-100 rounded-lg shadow-lg p-6 mb-8">
+      <div className="w-full max-w-xl bg-gray-100 rounded-lg shadow-lg p-6 m-8 dark:bg-black shadow-gray-500">
         <h1 className="text-4xl font-bold mb-6 text-center">Your Cart</h1>
+
         {cart.length === 0 ? (
           <p className="text-center text-red-900">Your Cart is empty</p>
         ) : (
           <ul className="space-y-6">
             {cart.map((item) => (
-              <li key={item.id} className="flex items-center bg-white p-4 rounded-lg shadow-inner">
+              <li key={item.id} className="flex items-center  p-4 rounded-lg shadow-inner dark:shadow-gray-600">
                 <div className="relative w-20 h-20 rounded-md overflow-hidden mr-4">
                   <Image
                     src={item.image.url}
@@ -33,22 +34,41 @@ export default function CartPage() {
 
                 <div className="flex-1">
                   <h2 className="text-xl font-semibold">{item.title}</h2>
-                  <div className="mt-2 flex items-center space-x-2">
+
+                  <div className="mt-2 flex items-center gap-2">
                     <label className="text-sm">Qty:</label>
-                    <input
-                      type="number"
-                      min="1"
-                      value={item.quantity}
-                      onChange={(e) => updateQuantity(item.id, Number(e.target.value))}
-                      className="w-16 p-1 border border-orange-900 rounded"
-                    />
+                    <div className="flex items-center border border-orange-900 rounded overflow-hidden">
+                      <button
+                        onClick={() =>
+                          updateQuantity(item.id, Math.max(1, item.quantity - 1))
+                        }
+                        className="px-2 bg-red-900 text-orange-200 hover:bg-red-700"
+                      >
+                        −
+                      </button>
+                      <span className="w-10 text-center bg-white text-black">
+                        {item.quantity}
+                      </span>
+                      <button
+                        onClick={() =>
+                          updateQuantity(item.id, Math.min(99, item.quantity + 1))
+                        }
+                        className="px-2 bg-red-900 text-orange-200 hover:bg-red-700"
+                      >
+                        +
+                      </button>
+                    </div>
                   </div>
+
                   <p className="mt-2">
                     Price: ${(item.discountedPrice * item.quantity).toFixed(2)}
                   </p>
                 </div>
 
-                <button onClick={() => removeFromCart(item.id)} className="ml-4 text-red-800">
+                <button
+                  onClick={() => removeFromCart(item.id)}
+                  className="ml-4 text-red-800 hover:underline"
+                >
                   Remove
                 </button>
               </li>
@@ -68,7 +88,7 @@ export default function CartPage() {
               </button>
               <button
                 onClick={handleCheckout}
-                className="bg-red-900 text-orange-200 px-6 py-2 rounded-lg font-bold hover:bg-red-700 "
+                className="bg-red-900 text-orange-200 px-6 py-2 rounded-lg font-bold hover:bg-red-700"
               >
                 Checkout
               </button>

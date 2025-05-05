@@ -25,7 +25,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-gray-100 p-8 rounded-xl shadow-lg max-w-6xl mx-auto mt-10">
+    <div className="bg-gray-100 p-8 rounded-xl shadow-lg max-w-6xl mx-auto m-10 dark:bg-black">
       <div className="grid md:grid-cols-2 gap-10 items-center">
         <div className="flex justify-center">
           <Image
@@ -33,15 +33,15 @@ export default function ContactPage() {
             alt="Contact illustration"
             width={300}
             height={300}
-            className="rounded-full shadow-md object-cover"
+            className="rounded-full shadow-md shadow-amber-600 object-cover"
           />
         </div>
 
         <div>
-          <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">Contact Us</h1>
+          <h1 className="text-3xl font-bold mb-6 text-center ">Contact Us</h1>
           <form onSubmit={handleSubmit(onsubmit)} className="space-y-4">
             <div>
-              <label className="block mb-1  text-gray-700">Full Name</label>
+              <label className="block mb-1 ">Full Name</label>
               <input
                 type="text"
                 {...register('name', { required: true, minLength: 3 })}
@@ -53,7 +53,7 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <label className="block mb-1 text-gray-700">Subject</label>
+              <label className="block mb-1">Subject</label>
               <input
                 type="text"
                 {...register('subject', { required: true, minLength: 3 })}
@@ -65,7 +65,7 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <label className="block mb-1 text-gray-700">Email</label>
+              <label className="block mb-1">Email</label>
               <input
                 type="email"
                 {...register('email', {
@@ -78,7 +78,7 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <label className="block mb-1 text-gray-700">Message</label>
+              <label className="block mb-1 ">Message</label>
               <textarea
                 {...register('message', { required: true, minLength: 10 })}
                 className="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-red-800 bg-white"
