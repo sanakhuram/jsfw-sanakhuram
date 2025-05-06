@@ -16,12 +16,12 @@ export default function NotFoundPage() {
             </motion.h1>
 
             <motion.p
-                className="text-lgmax-w-md"
+                className="text-lg max-w-md"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
             >
-                Oops! The page you are looking for doesnot exist.
+                Oops! The page you are looking for does not exist.
                 Maybe you mistyped the address or the page was moved.
             </motion.p>
 
