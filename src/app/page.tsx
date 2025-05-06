@@ -10,8 +10,8 @@ import { Product } from '@/types/product';
 import { getAllProducts } from '@/lib/api';
 
 export default function HomePage() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [showShop, setShowShop] = useState(false);
+  const [products, setProducts] = useState<Product[] | null>(null);
+  const [introComplete, setIntroComplete] = useState(false);
   const [search, setSearch] = useState('');
   const [sortBy, setSortBy] = useState<'price' | 'title'>('price');
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('asc');
@@ -31,15 +31,19 @@ export default function HomePage() {
   useEffect(() => {
     getAllProducts()
       .then(setProducts)
-      .catch(console.error);
+      .catch((err) => {
+        console.error('Failed to fetch products:', err);
+        setProducts([]);
+      });
   }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowShop(true), 3000);
+    const timer = setTimeout(() => setIntroComplete(true), 1000);
     return () => clearTimeout(timer);
   }, []);
 
-  const { paginated, totalPages } = useProductFilter(products, {
+  const safeProducts = products || [];
+  const { paginated, totalPages } = useProductFilter(safeProducts, {
     search,
     sortBy,
     sortDir,
@@ -47,7 +51,9 @@ export default function HomePage() {
     perPage,
   });
 
-  const discountedCount = products.filter((p) => p.discountedPrice < p.price).length;
+  const discountedCount = safeProducts.filter((p) => p.discountedPrice < p.price).length;
+
+  const showShop = products !== null && introComplete;
 
   return (
     <main className="max-w-6xl mx-auto px-4 py-8 space-y-8">
