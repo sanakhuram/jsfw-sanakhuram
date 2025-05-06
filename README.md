@@ -60,7 +60,7 @@
 - Reviews, star ratings ⭐, descriptions, discount badges 🏷️
 
 ### 🧭 Navigation & UI
-- Animated hero intro (3s) 🎬
+- Animated hero intro (1s) 🎬
 - Sticky header with cart & favourites 📌
 - Responsive layout & footer 📱💻
 - Product sorting (A-Z / price) 🔤💲
