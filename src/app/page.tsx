@@ -15,10 +15,7 @@ export default function HomePage() {
   const [search, setSearch] = useState('');
   const [sortBy, setSortBy] = useState<'price' | 'title'>('price');
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('asc');
-  const [currentPage, setCurrentPage] = useState(1);
   const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const perPage = 12;
 
   useEffect(() => {
     const darkMatch = window.matchMedia('(prefers-color-scheme: dark)');
@@ -43,16 +40,13 @@ export default function HomePage() {
   }, []);
 
   const safeProducts = products || [];
-  const { paginated, totalPages } = useProductFilter(safeProducts, {
+  const filteredProducts = useProductFilter(safeProducts, {
     search,
     sortBy,
     sortDir,
-    currentPage,
-    perPage,
   });
 
   const discountedCount = safeProducts.filter((p) => p.discountedPrice < p.price).length;
-
   const showShop = products !== null && introComplete;
 
   return (
@@ -78,12 +72,7 @@ export default function HomePage() {
             setSortBy={setSortBy}
             setSortDir={setSortDir}
           />
-          <ProductGrid
-            products={paginated}
-            totalPages={totalPages}
-            currentPage={currentPage}
-            setPage={setCurrentPage}
-          />
+          <ProductGrid products={filteredProducts} />
         </motion.div>
       )}
     </main>

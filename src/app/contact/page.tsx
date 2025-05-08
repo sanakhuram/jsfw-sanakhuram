@@ -19,9 +19,14 @@ export default function ContactPage() {
     reset,
   } = useForm<ContactFormInputs>();
 
-  const onsubmit = () => {
-    toast.success('Message Sent!');
-    reset();
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const onSubmit = (_data: ContactFormInputs) => {
+  toast.success('Message Sent!');
+  reset();
+};
+
+  const onError = () => {
+    toast.error('Please correct the highlighted fields.');
   };
 
   return (
@@ -42,7 +47,7 @@ export default function ContactPage() {
             Contact Us
           </h1>
 
-          <form onSubmit={handleSubmit(onsubmit)} className="space-y-4">
+          <form onSubmit={handleSubmit(onSubmit, onError)} className="space-y-4">
             <div>
               <label className="block mb-1 text-black dark:text-white">Full Name</label>
               <input

@@ -1,4 +1,6 @@
-import { getProduct, getAllProducts } from "./api";
+jest.mock('axios');
+import axios from 'axios';
+import { getAllProducts, getProduct } from './api';
 
 global.fetch = jest.fn();
 
@@ -14,42 +16,33 @@ const mockProduct = {
     reviews: [],
 };
 
-const mockResponse = {
-    ok: true,
-    json: async () => ({ data: [mockProduct] }),
-};
-
 beforeEach(() => {
     jest.clearAllMocks();
 });
 
 describe('API utility functions', () => {
     it('getAllProducts should return a product array', async () => {
-        (fetch as jest.Mock).mockResolvedValueOnce(mockResponse);
+        (axios.get as jest.Mock).mockResolvedValueOnce({
+            data: { data: [mockProduct] },
+        });
 
         const products = await getAllProducts();
         expect(products).toEqual([mockProduct]);
-        expect(fetch).toHaveBeenCalledWith('https://v2.api.noroff.dev/online-shop');
+        expect(axios.get).toHaveBeenCalledWith('https://v2.api.noroff.dev/online-shop');
     });
 
     it('getProduct should return a single product', async () => {
-        const mockSingleProductResponse = {
-            ok: true,
-            json: async () => ({ data: mockProduct }),
-        };
-
-        (fetch as jest.Mock).mockResolvedValueOnce(mockSingleProductResponse);
+        (axios.get as jest.Mock).mockResolvedValueOnce({
+            data: { data: mockProduct },
+        });
 
         const product = await getProduct('123');
         expect(product).toEqual(mockProduct);
-        expect(fetch).toHaveBeenCalledWith(
-            'https://v2.api.noroff.dev/online-shop/123',
-            expect.objectContaining({ cache: 'no-store' })
-        );
+        expect(axios.get).toHaveBeenCalledWith('https://v2.api.noroff.dev/online-shop/123');
     });
 
     it('throws error on failed fetch', async () => {
-        (fetch as jest.Mock).mockResolvedValueOnce({ ok: false });
+        (axios.get as jest.Mock).mockRejectedValueOnce(new Error('Failed to fetch all products'));
 
         await expect(getAllProducts()).rejects.toThrow('Failed to fetch all products');
     });
