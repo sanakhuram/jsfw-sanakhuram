@@ -8,15 +8,7 @@ import { useCart } from '@/context/CartContext';
 import { useFavourites } from '@/context/FavouritesContext';
 
 export default function ProductCard(product: Product) {
-  const {
-    id,
-    title,
-    price,
-    discountedPrice,
-    image,
-    description,
-    rating,
-  } = product;
+  const { id, title, price, discountedPrice, image, description, rating } = product;
 
   const discountPercent = Math.round(((price - discountedPrice) / price) * 100);
   const { addToCart } = useCart();
@@ -54,7 +46,9 @@ export default function ProductCard(product: Product) {
 
       <div className="flex-grow">
         <h2 className="text-base sm:text-lg md:text-xl font-semibold mb-1 truncate">{title}</h2>
-        <p className="text-xs sm:text-sm md:text-base text-gray-700 mb-2 line-clamp-3 truncate">{description}</p>
+        <p className="text-xs sm:text-sm md:text-base text-gray-700 mb-2 line-clamp-3 truncate">
+          {description}
+        </p>
         <p className="text-xs sm:text-sm md:text-base text-yellow-600 mb-2">
           {renderStars(rating)} ({rating})
         </p>
@@ -69,9 +63,7 @@ export default function ProductCard(product: Product) {
               </span>
             </>
           ) : (
-            <span className="font-bold text-sm sm:text-base md:text-lg">
-              ${price.toFixed(2)}
-            </span>
+            <span className="font-bold text-sm sm:text-base md:text-lg">${price.toFixed(2)}</span>
           )}
         </p>
       </div>

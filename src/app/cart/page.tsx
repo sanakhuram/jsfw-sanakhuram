@@ -43,9 +43,7 @@ export default function CartPage() {
                       <label className="text-sm">Qty:</label>
                       <div className="flex items-center border border-orange-900 rounded overflow-hidden">
                         <button
-                          onClick={() =>
-                            updateQuantity(item.id, Math.max(1, item.quantity - 1))
-                          }
+                          onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}
                           className="px-2 bg-red-900 text-orange-200 hover:bg-red-700"
                         >
                           −
@@ -54,9 +52,7 @@ export default function CartPage() {
                           {item.quantity}
                         </span>
                         <button
-                          onClick={() =>
-                            updateQuantity(item.id, Math.min(99, item.quantity + 1))
-                          }
+                          onClick={() => updateQuantity(item.id, Math.min(99, item.quantity + 1))}
                           className="px-2 bg-red-900 text-orange-200 hover:bg-red-700"
                         >
                           +

@@ -14,7 +14,7 @@ test('renders and updates search input', () => {
       sortDir="desc"
       setSortBy={setSortBy}
       setSortDir={setSortDir}
-    />
+    />,
   );
 
   const input = screen.getByPlaceholderText(/search products/i);

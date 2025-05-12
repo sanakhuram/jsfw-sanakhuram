@@ -14,9 +14,7 @@ export function useProductFilter(products: Product[], options: FilterOptions) {
     let result = [...products];
 
     if (search) {
-      result = result.filter((p) =>
-        p.title.toLowerCase().includes(search.toLowerCase())
-      );
+      result = result.filter((p) => p.title.toLowerCase().includes(search.toLowerCase()));
     }
 
     result.sort((a, b) => {

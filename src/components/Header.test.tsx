@@ -9,7 +9,7 @@ test('renders header with logo and cart', () => {
       <FavouritesProvider>
         <Header />
       </FavouritesProvider>
-    </CartProvider>
+    </CartProvider>,
   );
 
   expect(screen.getByText(/vibe cart/i)).toBeInTheDocument();

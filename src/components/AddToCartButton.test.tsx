@@ -18,7 +18,7 @@ test('renders Add to Cart button and clicks it', () => {
   render(
     <CartProvider>
       <AddToCartButton product={product} />
-    </CartProvider>
+    </CartProvider>,
   );
 
   const button = screen.getByText(/add to cart/i);

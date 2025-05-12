@@ -27,14 +27,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" className={kodchasan.variable}>
       <body className="flex flex-col min-h-screen font-sans">
         <CartProvider>
-        <FavouritesProvider>
-          <Header />
-          <Toaster position="top-center" />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-          <BackToTopButton/>
+          <FavouritesProvider>
+            <Header />
+            <Toaster position="top-center" />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+            <BackToTopButton />
           </FavouritesProvider>
-        </CartProvider>  
+        </CartProvider>
       </body>
     </html>
   );

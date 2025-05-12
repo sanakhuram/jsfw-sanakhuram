@@ -21,7 +21,7 @@ test('renders product details and discount badge', () => {
       <FavouritesProvider>
         <ProductCard {...product} />
       </FavouritesProvider>
-    </CartProvider>
+    </CartProvider>,
   );
 
   expect(screen.getByText(/test product/i)).toBeInTheDocument();

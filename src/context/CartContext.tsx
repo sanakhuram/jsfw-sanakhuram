@@ -1,13 +1,6 @@
 'use client';
 
-import {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  useCallback,
-  ReactNode,
-} from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
 import { Product } from '@/types/product';
 import toast from 'react-hot-toast';
 
@@ -58,9 +51,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const exists = prev.some((item) => item.id === product.id);
       return exists
         ? prev.map((item) =>
-            item.id === product.id
-              ? { ...item, quantity: item.quantity + 1 }
-              : item
+            item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item,
           )
         : [...prev, { ...product, quantity: 1 }];
     });
@@ -70,40 +61,42 @@ export function CartProvider({ children }: { children: ReactNode }) {
     });
   }, []);
 
-  const removeFromCart = useCallback((id: string) => {
-    const item = cart.find((item) => item.id === id);
+  const removeFromCart = useCallback(
+    (id: string) => {
+      const item = cart.find((item) => item.id === id);
 
-    setCart((prev) => prev.filter((item) => item.id !== id));
+      setCart((prev) => prev.filter((item) => item.id !== id));
 
-    if (item) {
-      toast.success(`${item.title} removed from cart`, {
-        id: `remove-${id}`,
-      });
-    }
-  }, [cart]);
+      if (item) {
+        toast.success(`${item.title} removed from cart`, {
+          id: `remove-${id}`,
+        });
+      }
+    },
+    [cart],
+  );
 
   const clearCart = useCallback(() => {
     setCart([]);
     toast.success('Cart cleared', { id: 'clear-cart' });
   }, []);
 
-  const updateQuantity = useCallback((id: string, quantity: number) => {
-    if (quantity < 1) return;
+  const updateQuantity = useCallback(
+    (id: string, quantity: number) => {
+      if (quantity < 1) return;
 
-    const item = cart.find((item) => item.id === id);
+      const item = cart.find((item) => item.id === id);
 
-    setCart((prev) =>
-      prev.map((item) =>
-        item.id === id ? { ...item, quantity } : item
-      )
-    );
+      setCart((prev) => prev.map((item) => (item.id === id ? { ...item, quantity } : item)));
 
-    if (item) {
-      toast.success(`${item.title} quantity updated to ${quantity}`, {
-        id: `qty-${id}`,
-      });
-    }
-  }, [cart]);
+      if (item) {
+        toast.success(`${item.title} quantity updated to ${quantity}`, {
+          id: `qty-${id}`,
+        });
+      }
+    },
+    [cart],
+  );
 
   return (
     <CartContext.Provider

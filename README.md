@@ -16,7 +16,7 @@
 
 ---
 
-## 📸 Screenshots
+## 📸
 
 <div align="center">
   <img 
@@ -53,6 +53,7 @@
 ## ✨ Features
 
 ### 🛒 E-Commerce Functionality
+
 - Add to cart 🛍️
 - Add to favourites ❤️
 - Remove, increase, decrease quantity ➕➖
@@ -60,6 +61,7 @@
 - Reviews, star ratings ⭐, descriptions, discount badges 🏷️
 
 ### 🧭 Navigation & UI
+
 - Animated hero intro (1s) 🎬
 - Sticky header with cart & favourites 📌
 - Responsive layout & footer 📱💻
@@ -68,6 +70,7 @@
 - Pagination 📄➡️
 
 ### ⚙️ Developer Setup
+
 - Routing with Next.js App Router 🧭
 - Context API for cart and favourites 🧠
 - Toast notifications with `react-hot-toast` 🔔
@@ -86,12 +89,13 @@ Jest + React Testing Library cover key components:
 - ➕ `AddToCartButton`
 - 🔄 `SortSearchBar`
 - 🦶 `Footer`
+- 🆙 `BackToTopButton`
 
 Run tests locally:
 
 ```bash
 npm run test
-````
+```
 
 ---
 
@@ -112,26 +116,26 @@ npm run dev
 
 Vibe Cart uses the **[Noroff Online Shop API](https://docs.noroff.dev/docs/v2/basic/online-shop)**:
 
-* `GET /online-shop` – fetch all products
-* `GET /online-shop/{id}` – fetch individual product
+- `GET /online-shop` – fetch all products
+- `GET /online-shop/{id}` – fetch individual product
 
 ---
 
 ## ✅ Assignment Checklist
 
-* [x] Fetch all products
-* [x] Show single product details
-* [x] Full cart functionality
-* [x] Wishlist (favourites)
-* [x] Search & sorting
-* [x] Responsive Tailwind layout
-* [x] Contact form with validation
-* [x] Toast notifications for actions
-* [x] TypeScript all the way
-* [x] Component tests (Jest + RTL)
-* [x] Neat project structure
-* [x] Live on Vercel 🚀
-* [x] This ✨ README ✨
+- [x] Fetch all products
+- [x] Show single product details
+- [x] Full cart functionality
+- [x] Wishlist (favourites)
+- [x] Search & sorting
+- [x] Responsive Tailwind layout
+- [x] Contact form with validation
+- [x] Toast notifications for actions
+- [x] TypeScript all the way
+- [x] Component tests (Jest + RTL)
+- [x] Neat project structure
+- [x] Live on Vercel 🚀
+- [x] This ✨ README ✨
 
 ---
 
@@ -145,31 +149,28 @@ For contributions! Fork the repository and create a pull request with your impro
 
 Made with ❤️ by **Sanakhuram**
 
-* 🐙 [GitHub](https://github.com/sanakhuram)
-* 💼 [LinkedIn](https://www.linkedin.com/in/sana-khuram-157ba02b7/)
-* 📧 [Email](mailto:sana.khuram.baig@gmail.com)
+- 🐙 [GitHub](https://github.com/sanakhuram)
+- 💼 [LinkedIn](https://www.linkedin.com/in/sana-khuram-157ba02b7/)
+- 📧 [Email](mailto:sana.khuram.baig@gmail.com)
 
 ---
-
 
 ## 📚 Resources
 
 ### 🔧 Courses & Learning
 
-* 🎥 [YouTube: React + Tailwind + TypeScript + Next.js](https://www.youtube.com/results?search_query=react+tailwind+typescript+next.js+)
-* 🧠 [LinkedIn Learning: React Essential Training](https://www.linkedin.com/learning/react-essential-training/building-modern-user-interfaces-with-react?u=43268076)
-* 📘 [LinkedIn Learning: Learning TypeScript](https://www.linkedin.com/learning/learning-typescript-2/welcome-to-learning-typescript?u=43268076)
-* 💡 [FreeCodeCamp – Full React Course 2024](https://www.youtube.com/watch?v=bMknfKXIFA8) (with Hooks, Context, Router)
-* 🏁 [Traversy Media: Next.js Crash Course](https://www.youtube.com/watch?v=mTz0GXj8NN0) (great for getting your project bootstrapped!)
-* 🚀 [JavaScript Mastery – Build & Deploy Modern Next.js Apps](https://www.youtube.com/watch?v=0fYi8SGA20k) (Next.js + Tailwind + Sanity combo magic)
+- 🎥 [YouTube: React + Tailwind + TypeScript + Next.js](https://www.youtube.com/results?search_query=react+tailwind+typescript+next.js+)
+- 🧠 [LinkedIn Learning: React Essential Training](https://www.linkedin.com/learning/react-essential-training/building-modern-user-interfaces-with-react?u=43268076)
+- 📘 [LinkedIn Learning: Learning TypeScript](https://www.linkedin.com/learning/learning-typescript-2/welcome-to-learning-typescript?u=43268076)
+- 💡 [FreeCodeCamp – Full React Course 2024](https://www.youtube.com/watch?v=bMknfKXIFA8) (with Hooks, Context, Router)
+- 🏁 [Traversy Media: Next.js Crash Course](https://www.youtube.com/watch?v=mTz0GXj8NN0) (great for getting your project bootstrapped!)
+- 🚀 [JavaScript Mastery – Build & Deploy Modern Next.js Apps](https://www.youtube.com/watch?v=0fYi8SGA20k) (Next.js + Tailwind + Sanity combo magic)
 
 ### 🧰 Docs & Official Stuff
 
-* 📚 [React Docs](https://react.dev/) – Learn how modern React works with hooks and components
-* 📘 [TypeScript Docs](https://www.typescriptlang.org/docs/) – Type-check yourself before you wreck yourself
-* 🌐 [Next.js Docs](https://nextjs.org/docs) – App router, SSR, ISR... all the tasty acronyms
-* 🎨 [TailwindCSS Docs](https://tailwindcss.com/docs) – Utility-first design heaven
-* 🔍 [React Testing Library Docs](https://testing-library.com/docs/react-testing-library/intro/) – Because tests are friends, not chores
-* 🌟 [Framer Motion Docs](https://www.framer.com/motion/) – Add that Pixar-level polish to your UI
-
-
+- 📚 [React Docs](https://react.dev/) – Learn how modern React works with hooks and components
+- 📘 [TypeScript Docs](https://www.typescriptlang.org/docs/) – Type-check yourself before you wreck yourself
+- 🌐 [Next.js Docs](https://nextjs.org/docs) – App router, SSR, ISR... all the tasty acronyms
+- 🎨 [TailwindCSS Docs](https://tailwindcss.com/docs) – Utility-first design heaven
+- 🔍 [React Testing Library Docs](https://testing-library.com/docs/react-testing-library/intro/) – Because tests are friends, not chores
+- 🌟 [Framer Motion Docs](https://www.framer.com/motion/) – Add that Pixar-level polish to your UI

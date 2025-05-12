@@ -17,30 +17,20 @@ export async function generateMetadata({
   };
 }
 
-export default async function ProductPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
+export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const product = await getProduct(id);
   const allProducts = await getAllProducts();
 
   const recommended = allProducts
-    .filter(
-      (p) =>
-        p.id !== product.id &&
-        p.tags.some((tag) => product.tags.includes(tag))
-    )
+    .filter((p) => p.id !== product.id && p.tags.some((tag) => product.tags.includes(tag)))
     .slice(0, 4);
 
   return (
     <main className="max-w-5xl mx-auto p-4 sm:p-6 space-y-8">
       <div className="flex flex-col md:flex-row gap-8">
         <div className="md:w-1/2 space-y-4">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">
-            {product.title}
-          </h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">{product.title}</h1>
           <p className="text-sm sm:text-base">{product.description}</p>
           <div>
             {product.discountedPrice < product.price ? (
@@ -93,8 +83,7 @@ export default async function ProductPage({
             {product.reviews.map((review) => (
               <div key={review.id} className="border-l-4 border-primary pl-4">
                 <p className="font-medium text-sm sm:text-base">
-                  {review.username} —{' '}
-                  <span className="text-yellow-500">{review.rating}⭐</span>
+                  {review.username} — <span className="text-yellow-500">{review.rating}⭐</span>
                 </p>
                 <p className="mt-1 text-sm sm:text-base">{review.description}</p>
               </div>

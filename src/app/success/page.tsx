@@ -30,21 +30,17 @@ export default function SuccessPage() {
       <div className="bg-gray-100 dark:bg-black dark:shadow-gray-600 p-8 rounded-lg shadow-md text-center max-w-md mx-auto space-y-6">
         <FiCheckCircle className="text-red-600 mx-auto" size={48} />
 
-        <h1 className="text-3xl font-bold">
-          Order Confirmed
-        </h1>
+        <h1 className="text-3xl font-bold">Order Confirmed</h1>
         <p className="text-gray-800 dark:text-gray-300">
           Your order has been placed successfully and is now being processed.
         </p>
 
         <div className="text-sm text-gray-700 dark:text-gray-300 bg-orange-50 dark:bg-gray-900 p-4 rounded-md shadow-inner">
           <p className="mb-2">
-            We will send you a confirmation email with tracking details as soon
-            as your order ships.
+            We will send you a confirmation email with tracking details as soon as your order ships.
           </p>
           <p className="text-sm text-gray-600 dark:text-gray-400">
-            If you have any questions or concerns, our support team is here to
-            help.
+            If you have any questions or concerns, our support team is here to help.
           </p>
         </div>
 

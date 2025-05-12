@@ -18,7 +18,7 @@ export const FavouritesProvider = ({ children }: { children: ReactNode }) => {
     setFavourites((prev) =>
       prev.some((fav) => fav.id === product.id)
         ? prev.filter((fav) => fav.id !== product.id)
-        : [...prev, product]
+        : [...prev, product],
     );
   };
 

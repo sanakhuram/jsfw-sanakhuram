@@ -19,11 +19,11 @@ export default function ContactPage() {
     reset,
   } = useForm<ContactFormInputs>();
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const onSubmit = (_data: ContactFormInputs) => {
-  toast.success('Message Sent!');
-  reset();
-};
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const onSubmit = (_data: ContactFormInputs) => {
+    toast.success('Message Sent!');
+    reset();
+  };
 
   const onError = () => {
     toast.error('Please correct the highlighted fields.');
