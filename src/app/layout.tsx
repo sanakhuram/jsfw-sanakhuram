@@ -11,6 +11,8 @@ import { FavouritesProvider } from '@/context/FavouritesContext';
 import BackToTopButton from '@/components/BackToTopButton';
 
 export const metadata = {
+  title: 'Vibe Cart 🛒 – Modern eCommerce UI',
+  description: 'Explore a fast, modern, and beautiful e-commerce experience built with Next.js, React, and Tailwind CSS.',
   icons: {
     icon: '/favicon.ico',
   },
