@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
 
 import { useForm } from 'react-hook-form';
@@ -19,7 +20,6 @@ export default function ContactPage() {
     reset,
   } = useForm<ContactFormInputs>();
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onSubmit = (_data: ContactFormInputs) => {
     toast.success('Message Sent!');
     reset();
@@ -30,8 +30,9 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-gray-100 p-8 rounded-xl shadow-lg max-w-6xl mx-auto m-10 dark:bg-black">
+    <div className="bg-gray-100 dark:bg-black p-8 rounded-xl shadow-lg max-w-6xl mx-auto my-10">
       <div className="grid md:grid-cols-2 gap-10 items-center">
+        {/* Illustration */}
         <div className="flex justify-center">
           <Image
             src="/images/contact.png"
@@ -49,10 +50,14 @@ export default function ContactPage() {
 
           <form onSubmit={handleSubmit(onSubmit, onError)} className="space-y-4">
             <div>
-              <label className="block mb-1 text-black dark:text-white">Full Name</label>
+              <label htmlFor="name" className="block mb-1 text-black dark:text-white">
+                Full Name
+              </label>
               <input
+                id="name"
                 type="text"
                 {...register('name', { required: true, minLength: 3 })}
+                aria-invalid={errors.name ? 'true' : 'false'}
                 className="w-full border border-gray-300 dark:border-gray-700 px-3 py-2 rounded bg-white dark:bg-gray-900 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-red-800"
               />
               {errors.name && (
@@ -63,10 +68,14 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <label className="block mb-1 text-black dark:text-white">Subject</label>
+              <label htmlFor="subject" className="block mb-1 text-black dark:text-white">
+                Subject
+              </label>
               <input
+                id="subject"
                 type="text"
                 {...register('subject', { required: true, minLength: 3 })}
+                aria-invalid={errors.subject ? 'true' : 'false'}
                 className="w-full border border-gray-300 dark:border-gray-700 px-3 py-2 rounded bg-white dark:bg-gray-900 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-red-800"
               />
               {errors.subject && (
@@ -77,13 +86,14 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <label className="block mb-1 text-black dark:text-white">Email</label>
+              <label htmlFor="email" className="block mb-1 text-black dark:text-white">
+                Email
+              </label>
               <input
+                id="email"
                 type="email"
-                {...register('email', {
-                  required: true,
-                  pattern: /^\S+@\S+\.\S+$/,
-                })}
+                {...register('email', { required: true, pattern: /^\S+@\S+\.\S+$/ })}
+                aria-invalid={errors.email ? 'true' : 'false'}
                 className="w-full border border-gray-300 dark:border-gray-700 px-3 py-2 rounded bg-white dark:bg-gray-900 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-red-800"
               />
               {errors.email && (
@@ -92,9 +102,13 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <label className="block mb-1 text-black dark:text-white">Message</label>
+              <label htmlFor="message" className="block mb-1 text-black dark:text-white">
+                Message
+              </label>
               <textarea
+                id="message"
                 {...register('message', { required: true, minLength: 10 })}
+                aria-invalid={errors.message ? 'true' : 'false'}
                 className="w-full border border-gray-300 dark:border-gray-700 px-3 py-2 rounded bg-white dark:bg-gray-900 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-red-800"
                 rows={4}
               />
